@@ -28,4 +28,8 @@ class UserController extends Controller
         // $user->photo=$request->photo;
         // $user->logo=$request->logo;
     }
+    function temp(){
+         $user = User::all();
+         return view('user',['user'=>$user]);
+    }
 }

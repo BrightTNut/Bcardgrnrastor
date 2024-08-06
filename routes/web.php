@@ -9,6 +9,9 @@ Route::get('/', function () {
 Route::get('/display-image', function () {
     return view('image');
 });
+Route::get('/sign', function () {
+    return view('signup');
+});
 Route::get('/templates', function () {
     return view('Templates/templates');
 });
@@ -19,6 +22,7 @@ Route::get('/form', function () {
     return view('form');
 });
 Route::post('/addUser',[UserController::class,'addUsers']);
+Route::get('/temp',[UserController::class,'temp']);
 
 Route::get('/social', function () {
     return view('social');
