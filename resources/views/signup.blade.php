@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In / Sign Up</title>
+    <script src="resources/js/sign.js" defer></script>
     <style>
         *,
         *:before,
@@ -263,19 +264,22 @@
     </style>
 </head>
 <body>
+<body>
     <div class="cont">
         <div class="form sign-in">
             <h2>Welcome</h2>
-            <label>
-                <span>Email</span>
-                <input type="email" />
-            </label>
-            <label>
-                <span>Password</span>
-                <input type="password" />
-            </label>
-            <p class="forgot-pass">Forgot password?</p>
-            <button type="button" class="submit">Sign In</button>
+            <form id="login-form" method="POST" action="/api/auth/login">
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email" required />
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password" required />
+                </label>
+                <p class="forgot-pass">Forgot password?</p>
+                <button type="submit" class="submit">Sign In</button>
+            </form>
         </div>
         <div class="sub-cont">
             <div class="img">
@@ -292,22 +296,29 @@
             </div>
             <div class="form sign-up">
                 <h2>Create your Account</h2>
-                <label>
-                    <span>Name</span>
-                    <input type="text" />
-                </label>
-                <label>
-                    <span>Email</span>
-                    <input type="email" />
-                </label>
-                <label>
-                    <span>Password</span>
-                    <input type="password" />
-                </label>
-                <button type="button" class="submit">Sign Up</button>
+                <form id="register-form" method="POST" action="/api/auth/register">
+                    <label>
+                        <span>Name</span>
+                        <input type="text" name="name" required />
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email" required />
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <input type="password" name="password" required />
+                    </label>
+                    <label>
+                        <span>Confirm Password</span>
+                        <input type="password" name="c_password" required />
+                    </label>
+                    <button type="submit" class="submit">Sign Up</button>
+                </form>
             </div>
         </div>
     </div>
+</body>
 
     <script>
         document.querySelector('.img__btn').addEventListener('click', function() {

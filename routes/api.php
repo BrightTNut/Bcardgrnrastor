@@ -1,19 +1,19 @@
 <?php
 
-use App\Http\Controllers\Authcontroller;
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 Route::group([
     'middleware' => 'api',
     'prefix' => 'auth',
-],function($router){
-    Route::post('/register',[Authcontroller::class,'register']);
-    Route::post('/login',[Authcontroller::class,'login']);
-    Route::post('/logout',[Authcontroller::class,'logout'])->middleware('auth:api');
-    Route::post('/refresh',[Authcontroller::class,'refresh'])->middleware('auth:api');
-    Route::post('/',[Authcontroller::class,'register'])->middleware('auth:api');
-
+], function ($router) {
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/profile', [AuthController::class, 'profile'])->middleware('auth:api');
+    Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:api');
+    Route::post('/refresh', [AuthController::class, 'refresh'])->middleware('auth:api');
 });
 
 Route::get('/user', function (Request $request) {
