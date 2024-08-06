@@ -235,7 +235,7 @@ box-shadow: inset -21px 21px 62px #5a5a5a,
 So, how do digital business cards achieve this? They include all the essential information needed for someone to get in touch with you. Unlike traditional physical cards, digital versions are cost-effective, convenient, and environmentally friendly. You can choose from a variety of pre-designed templates, customize elements such as the background, save, and share your card effortlessly.
 <br/>
 The process is straightforward for everyone involved. Sharing your digital business card helps to establish and enhance your brand identity, making a lasting impression on those you connect with.</p>
-<button class="morebutton">CHOOSE YOUR TEMPLATE</button>
+<button class="morebutton" onclick="location.href='/form'">CHOOSE YOUR TEMPLATE</button>
 </div>
                 <div><img src="{{ asset('images/carddemo.png') }}" alt="demo"/></div>
                 
@@ -268,7 +268,7 @@ The process is straightforward for everyone involved. Sharing your digital busin
                     <div class="template"><img src="{{ asset('images/carddemo.png') }}" alt="demo"/></div>
                     <div class="template"><img src="{{ asset('images/carddemo.png') }}" alt="demo"/></div>
                 </div>
-                <button class="morebutton">MORE</button>
+                <button onclick="location.href='/form'" class="morebutton">MORE</button>
             </div>
         </div>
     </body>

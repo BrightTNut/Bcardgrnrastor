@@ -1,3 +1,4 @@
+<!-- resources/views/yourfile.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,9 @@
     <title>Templates</title>
 </head>
 <body>
-    <h1>slect</h1>
+    <h1>Select</h1>
+    <div class="card-section">
+        <!-- @include('templates1') -->
+    </div>
 </body>
 </html>

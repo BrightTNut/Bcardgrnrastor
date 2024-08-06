@@ -6,7 +6,7 @@
     <title>Add Data</title>
     <style>
         body {
-            background-image: url('/images/bfgif.gif');
+            background-image: url('/images/formbg.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -119,7 +119,7 @@
     </div>
     <div class="input-group">
         <label for="role">Role</label>
-        <input type="text" id="role" name="position" placeholder="Your role..">
+        <input type="text" id="role" name="role" placeholder="Your role..">
     </div>
     <div class="input-group">
         <label for="about">About</label>

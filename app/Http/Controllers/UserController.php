@@ -3,33 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class UserController extends Controller
 {
     //
     function addUsers(Request $request){
-        echo $request->firstname;
-        echo "<br>";
-        echo $request->lastname;
-        echo "<br>";
-        echo $request->position;
-        echo "<br>";
-        echo $request->about;
-        echo "<br>";
-        echo $request->phone;
-        echo "<br>";
-        echo $request->facebook;
-        echo "<br>";
-        echo $request->twitter;
-        echo "<br>";
-        echo $request->instagram;
-        echo "<br>";
-        echo $request->linkedin;
-        echo "<br>";
-        echo $request->photo;
-        echo "<br>";
-        echo $request->logo;
-        echo "<br>";
-        
+        $user= new User();
+        $user->firstname=$request->firstname;
+        $user->lastname=$request->lastname;
+        $user->role=$request->role;
+        $user->about=$request->about;
+        $user->phone=$request->phone;
+        $user->facebook=$request->facebook;
+        $user->twitter=$request->twitter;
+        $user->instagram=$request->instagram;
+        $user->linkedin=$request->linkedin;
+        $user->save();
+        if($user){
+            return "New User Added";
+        }else{
+            return "opration Failed";
+
+        }
+        // $user->photo=$request->photo;
+        // $user->logo=$request->logo;
     }
 }
