@@ -21,6 +21,8 @@ Route::post('signup', [LoginController::class, 'processRegister'])->name('accoun
 Route::get('logout', [LoginController::class,'logout'])->name('account.logout');
 
 Route::get('form', [FormController::class,'index'])->name('account.form');
+//submitting form 
+
 Route::get('template1', function () {
     return view('Templates/templates1');
 });
@@ -37,7 +39,7 @@ Route::get('/social', function () {
 Route::get('/display-image', function () {
     return view('image');
 });
-
+Route::put('/account/update', [UserController::class, 'update'])->name('account.update');
 
 Route::get('/templates', function () {
     return view('Templates/templates');

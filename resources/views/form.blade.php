@@ -107,7 +107,9 @@
 <button>Log Out</button>
 </a>
     <div id="container">
-    
+    <form id="update-form" method="POST" action="{{ route('account.update') }}" enctype="multipart/form-data">
+    @csrf
+    @method('PUT')
     <div class="namediv input-group">
         <div>
             <label for="fname">First Name</label>
