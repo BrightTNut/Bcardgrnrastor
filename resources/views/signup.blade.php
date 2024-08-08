@@ -264,19 +264,26 @@
     </style>
 </head>
 <body>
-<body>
     <div class="cont">
         <div class="form sign-in">
             <h2>Welcome</h2>
-            <form id="login-form" method="POST" action="/api/auth/login">
+            <form id="login-form" method="POST" action="{{ route('account.authenticate') }}">
+            @csrf
                 <label>
                     <span>Email</span>
-                    <input type="email" name="email" required />
+                    <input type="email" value="{{old('email')}}" class="@error('email') is-invalid @enderror" name="email" required />
+                    @error('email')
+                    <p class="invalid-feedback">{{$message}}</p>
+                @enderror
                 </label>
+                
                 <label>
                     <span>Password</span>
-                    <input type="password" name="password" required />
+                    <input type="password" class="@error('password') is-invalid @enderror" name="password" required />
                 </label>
+                @error('password')
+                    <p class="invalid-feedback">{{$message}}</p>
+                @enderror
                 <p class="forgot-pass">Forgot password?</p>
                 <button type="submit" class="submit">Sign In</button>
             </form>
@@ -296,8 +303,9 @@
             </div>
             <div class="form sign-up">
                 <h2>Create your Account</h2>
-                <form id="register-form" method="POST" action="/api/auth/register">
-                    <label>
+                <form id="register-form" method="POST" action="{{route('account.processRegister')}}" >
+                @csrf    
+                <label>
                         <span>Name</span>
                         <input type="text" name="name" required />
                     </label>
@@ -310,15 +318,15 @@
                         <input type="password" name="password" required />
                     </label>
                     <label>
-                        <span>Confirm Password</span>
-                        <input type="password" name="c_password" required />
-                    </label>
+    <span>Confirm Password</span>
+    <input type="password" name="password_confirmation" required />
+</label>
+
                     <button type="submit" class="submit">Sign Up</button>
                 </form>
             </div>
         </div>
     </div>
-</body>
 
     <script>
         document.querySelector('.img__btn').addEventListener('click', function() {

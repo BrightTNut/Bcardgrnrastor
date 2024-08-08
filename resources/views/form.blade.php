@@ -102,11 +102,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>Enter Your Information</h1>
-
+<h1>Enter Your Information <br/>{{Auth::user()->name}}</h1>
+<a href="{{route('account.logout') }}">
+<button>Log Out</button>
+</a>
     <div id="container">
-    <form method="post" action="{{ url('/addUser') }}">
-    @csrf
+    
     <div class="namediv input-group">
         <div>
             <label for="fname">First Name</label>
