@@ -13,10 +13,7 @@
         <!-- Styles -->
         <style>
             body {
-                background-image: url('/images/bfgif.gif');
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
+                background-color: whitesmoke;
                
             }
              nav{
@@ -200,7 +197,11 @@ box-shadow: inset -21px 21px 62px #5a5a5a,
                     <li> explore </li>
                     <li>price</li>
                     <li> help</li>
-                    <li> designs</li>
+                    <li> 
+                    <a href="{{route('account.login') }}">
+<button>Login</button>
+</a>
+                    </li>
 
                 </ul>
             </div>
