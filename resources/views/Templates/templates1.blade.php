@@ -12,14 +12,14 @@
             padding: 2rem;
        }
         #logo{
-            
+
             padding: 3rem;
             text-align: center;
             border-radius: 50px;
 background: linear-gradient(315deg, #f0f0f0, #cacaca);
 box-shadow:  -20px -20px 60px #bebebe,
              20px 20px 60px #ffffff;
-             width:50% ;
+             width:40% ;
 
         }
         #data{
@@ -37,7 +37,7 @@ box-shadow:  -20px -20px 60px #bebebe,
             align-items: center;
         }
         #pic{
-           
+
             display: absolute;
             margin-top: -9%;
             border-radius: 50px;
@@ -56,19 +56,25 @@ box-shadow:  -20px -20px 60px #bebebe,
 
         /* //For mobie css */
         .mobile-view #container{
+            background-size: cover;
+            background-attachment: scroll ;
             width: 304px;
   min-height: 578px;
   height: 578px;
   box-shadow: 0 0 0 3px #dedfde;
   margin: 0 auto;
-  padding: 12px;
+  padding: -12px;
   border-radius: 50px;
   position: relative;
   overflow: hidden;
         }
-        .mobile-view #logo,
+        .mobile-view #logo{
+            
+            width: 150px;
+        }
         .mobile-view #data{
-            width: 300px;
+            width: 100%;
+            height: 100%;
         }
         .mobile-view #social-media a img{
             width: 60px;
@@ -106,33 +112,43 @@ box-shadow:  -20px -20px 60px #bebebe,
 </head>
 <body>
 <button class="switch-button" onclick="switchView()">Switch to Mobile View</button>
-   <div id="container">
+<div id="container">
 
-   
-    <div id="logo">
-        <img src="logo"/>
-        <h1>Company Name</h1>
-    </div>
+<div id="logo">
+    <img id="logo" src="{{ asset($user->logo) }}" alt="Company Logo"/>
+
+</div>
+
 <div id="data">
-       <img id="pic" src="{{ asset('images/person.jpg') }}" alt="demo"/>
-      <div id="persondata">
+    <img id="pic" src="{{ asset($user->photo) }}" alt="{{ $user->name }}"/>
+    <div id="persondata">
         <ul>
-            <li style="font-size:4rem;">Name</li>
-            <li style="font-weight:200;">Position</li>
-
-            <li><p>About</p></li>
-            <li>Phone</li>
-
+            <li style="font-size:4rem;">{{ $user->name }}</li>
+            <li style="font-weight:200;">{{ $user->position }}</li>
+            <li><p>{{ $user->about }}</p></li>
+            <li>{{ $user->phone }}</li>
         </ul>
-      </div>
-   </div>
-   <div id="social-media">
-    <a href="https://www.facebook.com" target="_blank" class="social-icon"><img src="https://img.icons8.com/?size=100&id=118467&format=png&color=000000"/></a>
-    <a href="https://www.twitter.com" target="_blank" class="social-icon"><img src="https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=000000"/></a>
-    <a href="https://www.instagram.com" target="_blank" class="social-icon"><img src="https://img.icons8.com/?size=100&id=32309&format=png&color=000000"/></a>
-    <a href="https://www.linkedin.com" target="_blank" class="social-icon"><img src="https://img.icons8.com/?size=100&id=8808&format=png&color=000000"/></a>
+    </div>
 </div>
+
+<div id="social-media">
+    <a href="{{ $user->facebook }}" target="_blank" class="social-icon">
+        <img src="https://img.icons8.com/?size=100&id=118467&format=png&color=000000"/>
+    </a>
+    <a href="{{ $user->twitter }}" target="_blank" class="social-icon">
+        <img src="https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=000000"/>
+    </a>
+    <a href="{{ $user->instagram }}" target="_blank" class="social-icon">
+        <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=000000"/>
+    </a>
+    <a href="{{ $user->linkedin }}" target="_blank" class="social-icon">
+        <img src="https://img.icons8.com/?size=100&id=8808&format=png&color=000000"/>
+    </a>
 </div>
+
+</div>
+
+
 </body>
 <script>
         function switchView() {

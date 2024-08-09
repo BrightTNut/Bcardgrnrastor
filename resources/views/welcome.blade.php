@@ -13,10 +13,7 @@
         <!-- Styles -->
         <style>
             body {
-                background-image: url('/images/bfgif.gif');
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
+                background-color: whitesmoke;
                
             }
              nav{

@@ -30,13 +30,24 @@
 <body>
     <h1>Select</h1>
     <div class="card-section">
-        <div id="container">
-            <img onclick="navigateToTemplate('/template1')" src="{{ asset('images/temp 1.png') }}" alt="demo"/>
-            <img onclick="navigateToTemplate('/template1')" src="{{ asset('images/temp 1.png') }}" alt="demo"/>
-            <img onclick="navigateToTemplate('/template1')" src="{{ asset('images/temp 1.png') }}" alt="demo"/>
-            <img onclick="navigateToTemplate('/template1')" src="{{ asset('images/temp 1.png') }}" alt="demo"/>
-            <img onclick="navigateToTemplate('/template1')" src="{{ asset('images/temp 1.png') }}" alt="demo"/>
-        </div>
+    <div id="container">
+    <a href="{{ route('account.template1') }}">
+        <img src="{{ asset('images/temp 1.png') }}" alt="demo"/>
+    </a>
+    <a href="{{ route('account.template1') }}">
+        <img src="{{ asset('images/temp 1.png') }}" alt="demo"/>
+    </a>
+    <a href="{{ route('account.template1') }}">
+        <img src="{{ asset('images/temp 1.png') }}" alt="demo"/>
+    </a>
+    <a href="{{ route('account.template1') }}">
+        <img src="{{ asset('images/temp 1.png') }}" alt="demo"/>
+    </a>
+    <a href="{{ route('account.template1') }}">
+        <img src="{{ asset('images/temp 1.png') }}" alt="demo"/>
+    </a>
+</div>
+
     </div>
     <script>
         function navigateToTemplate(url) {

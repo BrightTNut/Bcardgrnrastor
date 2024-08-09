@@ -8,8 +8,18 @@ use App\Models\User;
 class UserController extends Controller
 {
     //
+    public function getdata() {
+       // $user = User::get();
+       
+            $user = auth()->user(); // Get the currently logged-in user
+            return view('Templates/templates1', compact('user')); // Pass the user data to the view
+        
+        
+    }
+    
     public function update(Request $request)
     {
+
         $user = Auth::user();
     
         $request->validate([
@@ -37,15 +47,22 @@ class UserController extends Controller
         $user->linkedin = $request->linkedin;
     
         if ($request->hasFile('photo')) {
-            $photoPath = $request->file('photo')->store('photos', 'public');
-            $user->photo = $photoPath;
+            $photo = $request->file('photo');
+            $photoName = time() . '.' . $photo->extension();
+            $photo->move(public_path('userimages/photos'), $photoName);
+            $user->photo = 'userimages/photos/' . $photoName;
         }
-    
+        
         if ($request->hasFile('logo')) {
-            $logoPath = $request->file('logo')->store('logos', 'public');
-            $user->logo = $logoPath;
+            $logo = $request->file('logo');
+            $logoName = time() . '.' . $logo->extension();
+            $logo->move(public_path('userimages/logos'), $logoName);
+            $user->logo = 'userimages/logos/' . $logoName;
         }
-    
+        
+        // Save the user object
+        
+
         $user->save();
     
         return view('Templates/templates');

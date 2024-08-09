@@ -23,9 +23,7 @@ Route::get('logout', [LoginController::class,'logout'])->name('account.logout');
 Route::get('form', [FormController::class,'index'])->name('account.form');
 //submitting form 
 
-Route::get('template1', function () {
-    return view('Templates/templates1');
-});
+
 Route::get('/form', function () {
     return view('form');
 });
@@ -40,7 +38,11 @@ Route::get('/display-image', function () {
     return view('image');
 });
 Route::put('/account/update', [UserController::class, 'update'])->name('account.update');
+Route::get('/account/templates1', [UserController::class, 'getdata'])->name('account.template1');
 
 Route::get('/templates', function () {
     return view('Templates/templates');
+});
+Route::get('template1', function () {
+    return view('Templates/templates1');
 });
