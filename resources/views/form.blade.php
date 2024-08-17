@@ -104,7 +104,7 @@
 <body>
 <h1>Enter Your Information <br/>{{Auth::user()->name}}</h1>
 <a href="{{route('account.logout') }}">
-<button>Log Out</button>
+<button>Log Out</button> 
 </a>
     <div id="container">
     <form id="update-form" method="POST" action="{{ route('account.update') }}" enctype="multipart/form-data">
@@ -113,50 +113,59 @@
     <div class="namediv input-group">
         <div>
             <label for="fname">First Name</label>
-            <input type="text" value="{{old('firstname')}}" id="fname" name="firstname" placeholder="Your name..">
+            <input type="text" value="{{$user->firstname}}" id="fname" name="firstname" placeholder="Your name..">
         </div>
         <div>
             <label for="lname">Last Name</label>
-            <input type="text" id="lname" value="{{old('lastname')}}" name="lastname" placeholder="Your last name..">
+            <input type="text" id="lname" value="{{$user->lastname}}" name="lastname" placeholder="Your last name..">
         </div>
     </div>
     <div class="input-group">
         <label for="role">Role</label>
-        <input type="text" value="{{old('role')}}" id="role" name="role" placeholder="Your role..">
+        <input type="text" value="{{$user->role}}" id="role" name="role" placeholder="Your role..">
     </div>
     <div class="input-group">
+            <label for="cname">Company Name</label>
+            <input type="text" value="{{$user->cname}}" id="cname" name="cname" placeholder="Your Company Name..">
+        </div>
+    <div class="input-group">
         <label for="about">About</label>
-        <textarea id="about" value="{{old('about')}}" name="about" placeholder="Enter about your role.." rows="4"></textarea>
+        <textarea id="about" value="{{$user->about}}" name="about" placeholder="Enter about your role.." rows="4"></textarea>
     </div>
     <div class="input-group">
         <label for="phone">Contact</label>
-        <input type="tel" value="{{old('phone')}}" id="phone" name="phone" minlength="10" placeholder="Your phone number..">
+        <input type="tel" value="{{$user->phone}}" id="phone" name="phone" minlength="10" placeholder="Your phone number..">
     </div>
+    <div class="input-group">
+            <label for="city">City</label>
+            <input type="text" value="{{$user->city}}" id="city" name="city" placeholder="Your City Name..">
+        </div>
+       
     <div id="social">
         <div class="input-group">
             <label for="facebook">Facebook</label>
-            <input type="url" value="{{old('facebook')}}" id="facebook" name="facebook" placeholder="Your Facebook URL..">
+            <input type="url" value="{{$user->facebook}}" id="facebook" name="facebook" placeholder="Your Facebook URL..">
         </div>
         <div class="input-group">
             <label for="twitter">Twitter</label>
-            <input type="url" value="{{old('twitter')}}" id="twitter" name="twitter" placeholder="Your Twitter URL..">
+            <input type="url" value="{{$user->twitter}}" id="twitter" name="twitter" placeholder="Your Twitter URL..">
         </div>
         <div class="input-group">
             <label for="instagram">Instagram</label>
-            <input type="url" value="{{old('instagram"')}}" id="instagram" name="instagram" placeholder="Your Instagram URL..">
+            <input type="url" value="{{$user->instagram}}" id="instagram" name="instagram" placeholder="Your Instagram URL..">
         </div>
         <div class="input-group">
             <label for="linkedin">LinkedIn</label>
-            <input type="url" value="{{old('linkedin')}}" id="linkedin" name="linkedin" placeholder="Your LinkedIn URL..">
+            <input type="url" value="{{$user->linkedin}}" id="linkedin" name="linkedin" placeholder="Your LinkedIn URL..">
         </div>
     </div>
     <div class="input-group">
         <label for="phone">Profile Photo</label>
-        <input type="file" value="{{old('photo')}}" id="photo" name="photo">
+        <input type="file" value="{{$user->photo}}" id="photo" name="photo">
     </div>
     <div class="input-group">
         <label for="phone">Company Logo</label>
-        <input type="file" value="{{old('logo')}}" id="logo" name="logo">
+        <input type="file" value="{{$user->logo}}" id="logo" name="logo">
     </div>
     <input type="submit" value="Submit">
 </form>

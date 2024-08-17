@@ -4,7 +4,7 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FormController;
-
+use Stevebauman\Location\Facades\Location;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -24,9 +24,6 @@ Route::get('form', [FormController::class,'index'])->name('account.form');
 //submitting form 
 
 
-Route::get('/form', function () {
-    return view('form');
-});
 
 Route::get('/social', function () {
     return view('social');
@@ -43,6 +40,11 @@ Route::get('/account/templates1', [UserController::class, 'getdata'])->name('acc
 Route::get('/templates', function () {
     return view('Templates/templates');
 });
-Route::get('template1', function () {
-    return view('Templates/templates1');
+
+Route::get('loc', function (Request $request) {
+    // $ip =request()->ip();
+    $ip ='198.26.53.83';
+
+    $position = Location::get($ip);
+    return view('location',['position' => $position]);
 });

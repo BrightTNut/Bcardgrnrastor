@@ -22,6 +22,12 @@ return new class extends Migration
             if (!Schema::hasColumn('users', 'role')) {
                 $table->string('role')->nullable();
             }
+            if (!Schema::hasColumn('users', 'cname')) {
+                $table->string('cname')->nullable();
+            }
+            if (!Schema::hasColumn('users', 'city')) {
+                $table->string('city')->nullable();
+            }
             if (!Schema::hasColumn('users', 'about')) {
                 $table->text('about')->nullable();
             }
@@ -53,7 +59,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             // Remove columns if you need to rollback
-            $table->dropColumn(['first_name', 'last_name', 'role', 'about', 'phone', 'facebook', 'twitter', 'instagram', 'linkedin', 'profile_photo', 'company_logo']);
+            $table->dropColumn(['first_name', 'last_name', 'role','cname','city', 'about', 'phone', 'facebook', 'twitter', 'instagram', 'linkedin', 'profile_photo', 'company_logo']);
         });
     }
     

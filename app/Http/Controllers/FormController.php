@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 class FormController extends Controller
 {
     //
+
+    
     public function index(){
-        return view('form');
+        $user = auth()->user(); // Get the currently logged-in user
+        return view('form', compact('user')); // Pass the user data to the view
+    
+        
     }
 }

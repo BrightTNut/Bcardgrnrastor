@@ -8,6 +8,7 @@ use App\Models\User;
 class UserController extends Controller
 {
     //
+    //At form 
     public function getdata() {
        // $user = User::get();
        
@@ -25,7 +26,9 @@ class UserController extends Controller
         $request->validate([
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
-            'role' => 'required|string|max:255',
+            'role' => 'required|string|max:25',
+            'cname' => 'required|string|max:25',
+            'city' => 'required|string|max:25',
             'about' => 'nullable|string',
             'phone' => 'nullable|string|max:15',
             'facebook' => 'nullable|url',
@@ -39,6 +42,8 @@ class UserController extends Controller
         $user->firstname = $request->firstname;
         $user->lastname = $request->lastname;
         $user->role = $request->role;
+        $user->cname = $request->cname;
+        $user->city = $request->city;
         $user->about = $request->about;
         $user->phone = $request->phone;
         $user->facebook = $request->facebook;

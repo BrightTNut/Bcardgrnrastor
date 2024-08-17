@@ -116,15 +116,17 @@ box-shadow:  -20px -20px 60px #bebebe,
 
 <div id="logo">
     <img id="logo" src="{{ asset($user->logo) }}" alt="Company Logo"/>
-
+     <h2>{{ $user->cname }}</h2>
 </div>
 
 <div id="data">
     <img id="pic" src="{{ asset($user->photo) }}" alt="{{ $user->name }}"/>
     <div id="persondata">
         <ul>
-            <li style="font-size:4rem;">{{ $user->name }}</li>
-            <li style="font-weight:200;">{{ $user->position }}</li>
+        <div><li style="font-size:4rem;">{{ $user->firstname }}</li> <li style="font-size:4rem;">{{ $user->lastname }}</li></div>
+            <li style="font-weight:200;">{{ $user->role }}</li>
+            <li style="font-weight:200;">{{ $user->city }}</li>
+
             <li><p>{{ $user->about }}</p></li>
             <li>{{ $user->phone }}</li>
         </ul>
