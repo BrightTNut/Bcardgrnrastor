@@ -16,8 +16,8 @@
             padding: 3rem;
             text-align: center;
             border-radius: 50px;
-background: linear-gradient(315deg, #f0f0f0, #cacaca);
-box-shadow:  -20px -20px 60px #bebebe,
+            background: linear-gradient(315deg, #f0f0f0, #cacaca);
+            box-shadow:  -20px -20px 60px #bebebe,
              20px 20px 60px #ffffff;
              width:40% ;
 
@@ -57,16 +57,17 @@ box-shadow:  -20px -20px 60px #bebebe,
         /* //For mobie css */
         .mobile-view #container{
             background-size: cover;
-            background-attachment: scroll ;
+           
             width: 304px;
-  min-height: 578px;
-  height: 578px;
-  box-shadow: 0 0 0 3px #dedfde;
-  margin: 0 auto;
-  padding: -12px;
-  border-radius: 50px;
-  position: relative;
-  overflow: hidden;
+             min-height: 578px;
+            height: 578px;
+            box-shadow: 0 0 0 3px #dedfde;
+            margin: 0 auto;
+            padding: -12px;
+            border-radius: 50px;
+            position: relative;
+            overflow: scroll;
+            
         }
         .mobile-view #logo{
             
